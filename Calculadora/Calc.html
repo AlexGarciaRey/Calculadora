@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        #graph {
+  width: 500px;
+  height: 300px;
+  border: 1px solid black;
+}
+        .calculator {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin: 50px auto;
+  width: 300px;
+  text-align: center;
+}
+
+.display {
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  text-align: right;
+}
+
+.buttons button {
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 20px;
+  margin: 5px;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.buttons button:hover {
+  background-color: #3e8e41;
+}
+
+.buttons button:active {
+  background-color: #1e4124;
+}
+
+.buttons button.operator {
+  background-color: #ff9800;
+}
+
+.buttons button.operator:hover {
+  background-color: #e68a00;
+}
+
+.buttons button.operator:active {
+  background-color: #944d00;
+}
+
+.buttons button.special {
+  background-color: #f44336;
+}
+
+.buttons button.special:hover {
+  background-color: #e53935;
+}
+
+.buttons button.special:active {
+  background-color: #8b0000;
+}
+
+.buttons button.equals {
+  background-color: #2196f3;
+}
+
+.buttons button.equals:hover {
+  background-color: #0c7cd5;
+}
+
+.buttons button.equals:active {
+background-color: #0069c0;
+}
+
+.buttons button.zero {
+width: 110px;
+}
+
+.buttons button.decimal {
+font-size: 30px;
+}
+
+@media only screen and (max-width: 500px) {
+.calculator {
+width: 80%;
+}
+}
+
+@media only screen and (max-width: 400px) {
+.buttons button {
+font-size: 16px;
+padding: 5px;
+width: 40px;
+height: 40px;
+}
+
+.buttons button.operator {
+font-size: 20px;
+}.buttons button.special {
+font-size: 16px;
+}
+
+.buttons button.equals {
+font-size: 20px;
+}
+
+.buttons button.zero {
+width: 80px;
+}
+
+.buttons button.decimal {
+font-size: 20px;
+}
+}
+    </style>
+  <head>
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="graph"></div>
+    <div class="calculator">
+      <div class="display">
+        <input type="text" id="input" disabled>
+      </div>
+      <div class="buttons">
+        <button class="special" onclick="clearInput()">C</button>
+        <button class="special" onclick="deleteInput()">CE</button>
+        <button class="operator" onclick="appendInput('/')">÷</button>
+        <button class="operator" onclick="appendInput('*')">×</button>
+        <button onclick="appendInput('7')">7</button>
+        <button onclick="appendInput('8')">8</button>
+        <button onclick="appendInput('9')">9</button>
+        <button class="operator" onclick="appendInput('-')">-</button>
+        <button onclick="appendInput('4')">4</button>
+        <button onclick="appendInput('5')">5</button>
+        <button onclick="appendInput('6')">6</button>
+        <button class="operator" onclick="appendInput('+')">+</button>
+        <button onclick="appendInput('1')">1</button>
+        <button onclick="appendInput('2')">2</button>
+        <button onclick="appendInput('3')">3</button>
+        <button class="equals" onclick="calculate()">=</button>
+        <button class="zero" onclick="appendInput('0')">0</button>
+        <button class="decimal" onclick="appendInput('.')">.</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
